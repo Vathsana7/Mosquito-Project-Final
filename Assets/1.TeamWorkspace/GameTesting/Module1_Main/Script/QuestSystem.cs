@@ -88,7 +88,10 @@ public class QuestSystem : MonoBehaviour
                     l = true;
                 }
             }
-            BloodWarning.SetActive(!b&&!GameManager.instance.player.RestartAble);
+            if(GameManager.instance.player.isMate)
+            {
+                BloodWarning.SetActive(!b && !GameManager.instance.player.RestartAble);
+            }
             NecWarning.SetActive(!n && !GameManager.instance.player.RestartAble);
         }
     }
